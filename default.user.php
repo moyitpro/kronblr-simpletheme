@@ -1,9 +1,9 @@
-
+<?php $user = LocalUser::getInstance(); ?>
 <div id="main">
 
 <div class="header">
-  <img src="http://www.gravatar.com/avatar/<?php echo md5($GLOBALS['USER']->email); ?>.jpg?s=64" alt="" />
-  <h1><?php echo $GLOBALS['USER']->name; ?></h1>
+	  <img src="http://www.gravatar.com/avatar/<?php echo md5($user->email); ?>.jpg?s=64" alt="<?php echo $user->name; ?> gravatar" />
+  <h1><?php echo $user->name; ?></h1>
 </div>
 
 

@@ -47,5 +47,5 @@
 
 ?>
 </div>
-
+Remember to <a href="/forms/session/destroy.xml">log out</a> if you at a public computer!
 </div>
