@@ -8,13 +8,18 @@
       <xsl:element name="a">
       <xsl:attribute name="class">image</xsl:attribute>
       <xsl:attribute name="href"><xsl:call-template name="userlink" /></xsl:attribute>
-      <xsl:attribute name="title"><xsl:value-of select="user/display_name" /></xsl:attribute>
-      <xsl:if test="user/gravatar_md5">
+      <xsl:attribute name="title">
+        <xsl:choose>
+            <xsl:when test="user/display_name"><xsl:value-of select="user/display_name" /></xsl:when>
+            <xsl:otherwise><xsl:value-of select="user/name" /></xsl:otherwise></xsl:choose></xsl:attribute>
+      <xsl:choose>
+      <xsl:when test="user/gravatar_md5">
         <xsl:element name="img">
           <xsl:attribute name="src">http://gravatar.com/avatar/<xsl:value-of select="user/gravatar_md5" />?s=48</xsl:attribute>
           <xsl:attribute name="alt"><xsl:value-of select="user/name" /></xsl:attribute>
 	</xsl:element>
-      </xsl:if>
+      </xsl:when>
+      <xsl:otherwise><xsl:value-of select="user/name" /></xsl:otherwise></xsl:choose>
       </xsl:element>
     </xsl:if>
     <div class="text">
@@ -31,11 +36,9 @@
     </div>
   </xsl:template>
 
-  <xsl:template name="userlink">
-    http://<xsl:value-of select="user/domain" />/<xsl:value-of select="user/name" />
-  </xsl:template>
+  <xsl:template name="userlink">http://<xsl:value-of select="user/domain" />/<xsl:value-of select="user/name" /></xsl:template>
 
-  <xsl:template name="permalink">http://<xsl:value-of select="user/domain" />/<xsl:value-of select="user/name" />/<xsl:value-of select="id" /></xsl:template>
+  <xsl:template name="permalink">http://<xsl:value-of select="user/domain" />/<xsl:value-of select="user/name" />/<xsl:value-of select="global_id" /></xsl:template>
 
   <xsl:template name="relative-time">
     <xsl:param name="diff"/>

@@ -3,19 +3,18 @@
   
   <xsl:output method="xml" omit-xml-declaration="yes" encoding="utf-8" indent="yes" />
 
-  <xsl:template match="/response">
-    <xsl:if test="count(user)">
+  <xsl:template match="response">
+      <xsl:if test="count(user)">
       <xsl:if test="@request = 'fmp.user.following'">
       <h4>Following</h4>
       </xsl:if>
       <xsl:if test="@request = 'fmp.user.followers'">
       <h4>Followers</h4>
       </xsl:if>
-
       <div class="userlist">
         <xsl:apply-templates select="user" />
       </div>
-    </xsl:if>
+      </xsl:if>
   </xsl:template>
 
   <xsl:template match="user">
