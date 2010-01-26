@@ -2,7 +2,7 @@
 <div id="main">
 
 <div class="header">
-  <img src="http://www.gravatar.com/avatar/<?php echo md5($GLOBALS['USER_CONTROL']['email']); ?>.jpg?s=32" alt="" />
+  <img src="http://www.gravatar.com/avatar/<?php echo md5(AuthorizedUser::getInstance()->email); ?>.jpg?s=32" />
   <h1>Home</h1>
 
   <form id="update" method="post" action="/api/micro/update.json?ref=%2F">
@@ -16,7 +16,6 @@
   </div>
   </form>
 </div>
-
 <ul id="updates">
 <?php
 
@@ -35,6 +34,7 @@
 
 ?>
 </ul>
+<hr />
 
 <div class="relations">
 <?php
@@ -47,5 +47,5 @@
 
 ?>
 </div>
-Remember to <a href="/forms/session/destroy.xml">log out</a> if you at a public computer!
+Remember to <a href="./logout">log out</a> if you at a public computer!
 </div>
