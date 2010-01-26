@@ -4,11 +4,11 @@
       Micros Theme Control
   */
 
-  class Theme implements MicrosTheme
+  class Theme implements KronTheme
   {
     public static $xsl;
 
-    public static function name(){ return "Default"; }
+    public static function name(){ return "Custom Theme"; }
 
     public static function sources(){}
 
