@@ -101,10 +101,10 @@ body {
 	border: 1px solid;
 	background-color: #e8fafd;
 	width: 940px;
+	margin-top:10px;
 	margin-left: auto ;
   	margin-right: auto ;
-  	overflow: auto;
-  	 padding:4px 0;
+	padding: 2px 2px 2px;
 }
 .footer{
 	border: 1px solid;
@@ -112,9 +112,9 @@ body {
 	background-color: #e8fafd;
 	width: 940px;
 	height:  auto;
+	margin-top:10px;
 	margin-left: auto ;
-  	margin-right: auto ;
-  	overflow: auto;	
+  	margin-right: auto ;	
   	text-align: center;
-  	padding:4px 0;
+  	padding: 2px 2px 2px;
 }

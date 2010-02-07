@@ -4,8 +4,8 @@
 <div class="header">
   <img src="http://www.gravatar.com/avatar/<?php echo md5(AuthorizedUser::getInstance()->email); ?>.jpg?s=32" />
   <h1>Home</h1>
-
-  <form id="update" method="post" action="/api/micro/update.json?ref=%2F">
+<!--<form id="update" method="post" action="/api/micro/update.json?ref=%2F">--> 
+  <form id="update" method="post" action="/api/micro/update.json?ref=%2Fkronblr%2F">
   <div class="f">
   <?php
 
